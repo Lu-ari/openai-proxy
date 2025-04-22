@@ -14,9 +14,8 @@ app.use("/", (req, res, next) => {
     target: targetUrl,
     changeOrigin: true,
     secure: false,
-    pathRewrite: {
-      "^/": "",
-    },
+    pathRewrite: (path, req) => path.replace(/^\/https?:\/\//, "/"),
+    router: () => targetUrl,
     onProxyReq: (proxyReq) => {
       proxyReq.setHeader("Origin", targetUrl);
     },
