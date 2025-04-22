@@ -27,5 +27,5 @@ app.use("/", (req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(Proxy sunucusu ${port} portunda çalışıyor.);
+  console.log('Proxy sunucusu ${port} portunda çalışıyor.');
 });
